@@ -1,0 +1,51 @@
+Slip No. 1
+
+1. Perimeter and Area of Rectangle:
+import java.util.Scanner; class Rectangle {
+public static void main(String[] args) { Scanner sc = new Scanner(System.in); double length = sc.nextDouble(); double breadth = sc.nextDouble(); double area = length * breadth;
+double perimeter = 2 * (length + breadth); System.out.println("Area: " + area); System.out.println("Perimeter: " + perimeter);
+}
+}
+
+2. Abstract Class Order with Subclasses:
+
+
+
+
+abstract class Order { int id;
+String description;
+
+abstract void accept(); abstract void display();
+}
+
+class PurchaseOrder extends Order { String customerName;
+
+void accept() {
+customerName = "Customer A";
+}
+
+void display() {
+System.out.println("Purchase Order: " + customerName);
+
+}
+}
+
+class SalesOrder extends Order { String vendorName;
+
+void accept() {
+vendorName = "Vendor A";
+}
+
+void display() {
+System.out.println("Sales Order: " + vendorName);
+}
+}
+
+public class OrderTest {
+public static void main(String[] args) { PurchaseOrder p1 = new PurchaseOrder(); p1.accept();
+p1.display();
+
+SalesOrder s1 = new SalesOrder(); s1.accept();
+s1.display();
+}
+}
